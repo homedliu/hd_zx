@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="YES">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <title>耐力追星赛</title>
+    <link rel="stylesheet" href="css/style.min.css"/>
+    <script src="js/jquery-1.9.1.js"></script>
+
+    <script src="js/pageResponse.min.js"></script>
+    <script src="js/wScratchPad.min.js"></script>
+    <script >
+        window.onload  = function(){
+            pageResponse({
+                selectors : '.page_box',
+                mode : 'contain',
+                width : '375',
+                height : '603'
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <!--音乐开关-->
+        <button class="btn_music" ><i></i><audio loop="loop"  id="media" > <source src="" type="audio/mpeg"></audio></button>
+        <!--音乐开关end-->
+        <!--加载页面-->
+        <div class="loading_page" >
+            <img src="images/lo_bg.jpg" alt="" width="100%" height="100%"/>
+            <img src="images/lo_pr_icon.png" alt="" style="opacity: 0"/>
+            <img src="images/lo_pr_c_bg.png" alt=""style="opacity: 0"/>
+            <div class="lo_pr_bg_box">
+                <img src="images/lo_people.gif" alt="" />
+
+                <div class="lo_pr">
+
+                        <span class="lo_pr_bg" id="lo_pr_bg"  style="width: 1%;"><i class="left"></i><i class="right"></i><em  class="lo_pr_c_bg"></em></span>
+                    <img src="images/icon_qi_samll.png" alt="" class="icon_qi_samll"/>
+                </div>
+
+                <p><span class="current">1%</span></p>
+            </div>
+        </div>
+        <!--加载页面end-->
+        <div class="game_bg">
+            <img src="images/img_top.png" alt=""  width="100%" class="img_top"/>
+            <!--游戏中场景，秦王宫-->
+            <img src="images/img_qhg.png" alt="" class="img_qhg"/>
+            <!--清明上河图-->
+            <img src="images/img_qmsht.png" alt="" class="img_qmsht" />
+            <!--明清宫苑-->
+            <img src="images/img_mqgy.png" alt="" class="img_mqgy" />
+            <!--梦幻谷-->
+            <img src="images/img_mhg.png" alt="" class="img_qhg" />
+            <!--广州街-->
+            <img src="images/img_gzj.png" alt="" class="img_qhg"/>\
+        </div>
+        <div class="game_scene">
+            <div class="game_scene_bg"></div>
+            <div class="scene_left"></div>
+            <div class="scene_right"></div>
+            <div class="game_star" style="display: block"></div>
+            <div class="ready_box" id="ready_box">
+                <img src="images/icon_ready.png" alt="" class="icon_ready"/>
+                <img src="images/icon_three.png" alt="" class="icon_three"/>
+                <img src="images/icon_two.png" alt="" class="icon_two"/>
+                <img src="images/icon_one.png" alt="" class="icon_one"/>
+                <img src="images/icon_go.png" alt="" class="icon_go"/>
+            </div>
+        </div>
+
+        <!--主页面-->
+        <div class="page_box">
+            <!--人-->
+            <div class="people_run"></div>
+            <!--首页-->
+            <div class="index_page" style="display: none">
+
+            <div class="logo_box">
+                <img src="images/logo.png" alt="" class="logo"/>
+                <div class="logo_tx_star">
+                    <img src="images/icon_hg.png" alt="" class="icon_hg"/>
+                    <img src="images/icon_hg_star.png" alt="" class="icon_hg_star"/>
+                </div>
+
+            </div>
+            <div class="logo_tx_box">
+                <img src="images/logo_tx.png" alt="" class="logo_tx"/>
+
+
+            </div>
+
+            <div class="btn_box">
+                <button class="p1_btn_wyzt"><img src="images/p1_btn_wyzt.png" alt=""/></button>
+                <div class="p1_btn_wyzx">
+                    <a href="https://mp.weixin.qq.com/s?__biz=MjM5NTI1MjcyMA==&mid=2650244189&idx=2&sn=b3fabb087f85852af52e3a6f83471746&scene=1&srcid=0511AzbMsZUtvymOPFqf8C0A&pass_ticket=qCz2HBV%2BfCFz%2FYhThEoL9rRNSJ87JGG6QloIzJ2UNl0ek8KQ1XT7D9%2BdNtt9lbBM#rd"></a>
+                    <a href="https://mp.weixin.qq.com/s?__biz=MzA4NzQ3OTg2OQ==&mid=502493323&idx=1&sn=1d8ca63f44b1139a0671aae8fe0a40c6&scene=1&srcid=0505axPW2L1jztQawudAoS5I&from=singlemessage&isappinstalled=0&pass_ticket=qCz2HBV%2BfCFz%2FYhThEoL9rRNSJ87JGG6QloIzJ2UNl0ek8KQ1XT7D9%2BdNtt9lbBM"></a>
+                </div>
+            </div>
+        </div>
+            <!--首页end-->
+            <!--赛道选择-->
+            <div class="track_sel" >
+            <img src="images/p2_title.png" alt="" class="p2_title"/>
+            <div class="banner">
+                <div class="flexslider">
+                <ul class="slides">
+                    <!--秦王宫-->
+                    <li class="ban_qkg">
+                        <img src="images/p2_qkg.png" alt=""/>
+                        <div class="ban_title">
+                            <img src="images/p2_piaodai.png" alt="" class="p2_piaodai"/>
+                            <img src="images/p2_text_qkg.png" alt="" class="ban_title_text"/>
+                        </div>
+                    </li>
+                    <!--清明上河图-->
+                    <li class="ban_qmsht">
+                        <img src="images/p2_qmsht.png" alt=""/>
+                        <div class="ban_title">
+                            <img src="images/p2_piaodai.png" alt="" class="p2_piaodai"/>
+                            <img src="images/p2_text_qmsht.png" alt="" class="ban_title_text"/>
+                        </div>
+                    </li>
+                    <!--明清宫苑-->
+                    <li class="ban_mqgy">
+                        <img src="images/p2_mqgy.png" alt=""/>
+                        <div class="ban_title">
+                            <img src="images/p2_piaodai.png" alt="" class="p2_piaodai"/>
+                            <img src="images/p2_text_mqgy.png" alt="" class="ban_title_text"/>
+                        </div>
+                    </li>
+                    <!--梦幻谷-->
+                    <li class="ban_mhg">
+                        <img src="images/p2_mhg.png" alt=""/>
+                        <div class="ban_title">
+                            <img src="images/p2_piaodai.png" alt="" class="p2_piaodai"/>
+                            <img src="images/p2_text_mhg.png" alt="" class="ban_title_text"/>
+                        </div>
+                    </li>
+                    <!--广州街-->
+                    <li class="ban_gzj">
+                        <img src="images/p2_gzj.png" alt=""/>
+                        <div class="ban_title">
+                            <img src="images/p2_piaodai.png" alt="" class="p2_piaodai"/>
+                            <img src="images/p2_text_gzj.png" alt="" class="ban_title_text"/>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <button class="btn_ljzt"><img src="images/p2_btn_ljzt.png" alt=""/></button>
+        </div>
+            <!--赛道选择end-->
+            <!--游戏页面-->
+            <div class="game_page"  >
+                <div class="metre_num_box">
+
+                    <div class="metre_num">
+                        <div class="pr_bg_box">
+                            <span class="user_tx_box" id="user_tx">
+                        <img src="images/icon_tx_kuang.png" alt="" class="icon_tx_kuang" />
+                        <img src="images/img_01.jpg" alt="user_tx" class="user_tx"/>
+                        <img src="images/white_star.png" alt="" class="white_star"/>
+                    </span>
+                            <!--控制“pr_bg”的宽度“width”及可控制进度条,默认最好有点宽度，因为有兼容性问题-->
+                            <span class="pr_bg" id="prBg" style="width: 1%;"><i class="left"></i><i class="right"></i><img src="images/p3_pr_cbg.png" alt="" class="p3_pr_cbg"/></span>
+
+                            <div class="num_qi" id="num_qi">
+                                <em class="num_text" id="meterNow">0m</em>
+                                <img src="images/icon_qi.png" alt="" class="icon_qi"/>
+                            </div>
+                            <span class="starman" id="starman"><img src="images/icon_star.png" alt=""/></span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="scene_time">
+                    <span class="scene"><i id="hd_scene">秦王宫</i></span>
+                    <span class="time" id="game_time"><i>30秒</i></span>
+                </div>
+                <div class="game_btn">
+                    <button type="button" class="btn_left" disabled="true"><img src="images/icon_f_left.png" alt=""/></button>
+                    <button type="button" class="btn_right" disabled="true"><img src="images/icon_f_right.png" alt=""/></button>
+                </div>
+            </div>
+            <!--游戏页面end-->
+
+        </div>
+        <!--弹出层-->
+        <div class="pop_box" >
+            <div class="black_bg"></div>
+            <div class="page_box">
+                <!--游戏规则-->
+                <div class="page_gz_box"  style="display: block">
+                    <div class="gz_box">
+                        <div class="alert_bg">
+                            <div class="alert_bg_top"></div>
+                            <div class="alert_bg_center"></div>
+                            <div class="alert_bg_bottom"></div>
+                        </div>
+                        <div class="pop_title">
+                            <img src="images/p2_piaodai.png" alt="" class="pop_title_bg"/>
+                            <img src="images/pop_title_yxgz.png" alt="" class="pop_title_text"/>
+                        </div>
+                        <div><img src="images/gz_text01.png" alt="" class="gz_text01"/>
+                            <img src="images/gz_text02.png" alt="" class="gz_text02"/></div>
+                        <button class="btn_playgame"><img src="images/btn_playgame.png" alt=""/></button>
+                    </div>
+                </div>
+                <!--追星失败-->
+                <div class="page_sb_box"  >
+                <div class="sb_box">
+                    <div class="alert_bg">
+                        <div class="alert_bg_top"></div>
+                        <div class="alert_bg_center"></div>
+                        <div class="alert_bg_bottom"></div>
+                    </div>
+                    <div class="pop_title">
+                        <img src="images/p2_piaodai.png" alt="" class="pop_title_bg"/>
+                        <img src="images/pop_title_zxsb.png" alt="" class="pop_title_text"/>
+                    </div>
+                    <div class="user_tx_box">
+                        <img src="images/icon_tx_kuang.png" alt="" class="icon_tx_kuang" />
+                        <img src="images/img_01.jpg" alt="user_tx" class="user_tx"/>
+                        <img src="images/icon_shangdian.png" alt="" class="icon_shangdian"/>
+                    </div>
+                    <img src="images/sb_text.png" alt="" class="sb_text"/>
+                    <button class="btn_phb"><img src="images/btn_phb.png" alt=""/></button>
+                    <button class="btn_playagrin"><img src="images/btn_playagrin.png" alt=""/></button>
+                </div>
+            </div>
+                <!--追星成功-->
+                <div class="page_cg_box" >
+                <div class="cg_box">
+                    <div class="alert_bg">
+                        <div class="alert_bg_top"></div>
+                        <div class="alert_bg_center"></div>
+                        <div class="alert_bg_bottom"></div>
+                    </div>
+                    <div class="pop_title">
+                        <img src="images/p2_piaodai.png" alt="" class="pop_title_bg"/>
+                        <img src="images/pop_title_zxcg.png" alt="" class="pop_title_text"/>
+                    </div>
+                    <div class="user_tx_box">
+                        <img src="images/icon_tx_kuang.png" alt="" class="icon_tx_kuang" />
+                        <img src="images/img_01.jpg" alt="user_tx" class="user_tx"/>
+                        <img src="images/icon_heart.png" alt="" class="icon_heart"/>
+                    </div>
+                    <div class="cg_text_box"><img src="images/cg_text.png" alt="" class="cg_text"/><span class="run_time" id="cg_time">25S</span></div>
+                    <button class="btn_cjyhl"><img src="images/btn_cjyhl.png" alt=""/></button>
+                    <div class="btn_p_z">
+                        <button class="btn_p"></button>
+                        <button class="btn_z"></button>
+                    </div>
+                </div>
+            </div>
+                <!--排行榜-->
+                <div class="page_phb_box"  >
+                    <div class="phb_box">
+                        <button class="btn_close"><img src="images/btn_close.png" alt=""/></button>
+                        <div class="alert_bg">
+                            <div class="alert_bg_top"></div>
+                            <div class="alert_bg_center"></div>
+                            <div class="alert_bg_bottom"></div>
+                        </div>
+                        <div class="pop_title">
+                            <img src="images/p2_piaodai.png" alt="" class="pop_title_bg"/>
+                            <img src="images/pop_title_phb.png" alt="" class="pop_title_text"/>
+                        </div>
+
+                        <div id="phb_scroll">
+                            <ul>
+                                <li><span class="phb_num"><i>1</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>2</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>3</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>4</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>5</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>6</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>6</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>6</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                                <li><span class="phb_num"><i>6</i></span><span class="username">用户名用户名</span><span class="timenum">23s</span></li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--抽奖-->
+                <div class="page_cj_box"  >
+
+                    <div class="cj_box">
+                        <button class="btn_cj_close"><img src="images/btn_close.png" alt=""/></button>
+                        <div class="alert_bg">
+                            <div class="alert_bg_top"></div>
+                            <div class="alert_bg_center"></div>
+                            <div class="alert_bg_bottom"></div>
+                        </div>
+                        <div class="pop_title">
+                            <img src="images/p2_piaodai.png" alt="" class="pop_title_bg"/>
+                            <img src="images/pop_title_gj.png" alt="" class="pop_title_text"/>
+                        </div>
+
+
+
+                    </div>
+                    <!--刮奖-->
+                    <div class="gj">
+                        <div class="gj_box">
+                            <img class="cj_bg" src="images/cj_bg.png" alt=""/>
+                            <div class="gj_bg">
+                                <div id="gj_con" class="gj_con">
+                                    <div class="cj_box_bg"><img src="images/cj_box_bg.png" alt=""/></div>
+                                    <div class="win_nowin">
+                                        <!--抽中-->
+                                        <div class="win" style="display: block">
+                                            <!--提示-->
+                                            <div class="win_img" >
+                                                <img src="images/zhong.png" alt=""/>
+                                            </div>
+                                            <!--商城兑换码-->
+                                            <div class="win_num" style="display: block">
+                                                <h5>兑换码</h5>
+                                                <p>2012345784</p>
+                                            </div>
+                                        </div>
+                                        <!--没中-->
+                                        <div class="nowin" style="display: none">
+                                            <img src="images/no_zhong.png" alt=""/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--抽中显示该按钮-->
+                        <button class="btn_scth" ><img src="images/btn_scth.png" alt="" width="234"/></button>
+                        <!--抽中抵价码显示该段字-->
+                        <img src="images/cj_text.png" alt="" class="cj_text" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/iscroll.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        $(function(){
+            $('.flexslider').flexslider({
+                animation:'fade',
+                animationSpeed:1000,
+                slideshow:false,
+                controlsContainer: '.flexslider',
+                touch:false
+            });
+        });
+        var myscroll;
+        function loaded(){
+              myscroll=new iScroll("phb_scroll");
+        }
+        window.addEventListener("DOMContentLoaded",loaded,false);
+    </script>
+</body>
+</html>
